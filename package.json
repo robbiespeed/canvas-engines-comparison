@@ -6,10 +6,8 @@
   "author": "slay_lines",
   "license": "MIT",
   "scripts": {
-    "start": "parcel serve src/pages/pixi.pug --open",
-    "build": "parcel build src/pages/pixi.pug --no-source-maps --no-scope-hoist",
-    "deploy": "yarn build && yarn copy",
-    "copy": "source .env && rsync -qazP $DEPLOY_FILES $DEPLOY_TARGET"
+    "start": "parcel serve src/pages/pixi.pug",
+    "build": "parcel build src/pages/pixi.pug --no-source-maps --no-scope-hoist"
   },
   "dependencies": {
     "@createjs/easeljs": "^2.0.0-beta.4",
@@ -38,13 +36,14 @@
     "browserslist": "^4.17.0"
   },
   "devDependencies": {
-    "@parcel/transformer-pug": "2.10.3",
+    "@parcel/transformer-pug": "^2.11.0",
     "buffer": "^5.5.0||^6.0.0",
     "path-browserify": "^1.0.0",
     "prettier": "2.4.1",
     "process": "^0.11.10",
     "pug": "3.0.2",
-    "punycode": "^1.4.1"
+    "punycode": "^1.4.1",
+    "url": "^0.11.0"
   },
   "browserslist": [
     "last 2 Chrome versions"

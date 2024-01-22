@@ -54,6 +54,21 @@ div.rectangle {
   border: solid 1px;
 }
 
+.animated {
+  animation-name: move;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(var(--canvas-width));
+  }
+  100% {
+    transform: translateX(var(--rect-end));
+  }
+}
+
 /*
 Fix for the border of Next2d canvas
 */

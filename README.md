@@ -1,6 +1,8 @@
 # Canvas Engines Comparison
 
-https://benchmarks.slaylines.io/
+Forked from [slaylines/canvas-engines-comparison](https://github.com/slaylines/canvas-engines-comparison)
+
+Added Native SVG and DOM using CSS Animations
 
 ## Description
 
@@ -26,37 +28,36 @@ https://benchmarks.slaylines.io/
 | [SVG.js](https://github.com/svgdotjs/svg.js)               | ![](https://badgen.net/bundlephobia/min/@svgdotjs/svg.js)  |
 | [Next2D](https://next2d.app)                               | ![](https://badgen.net/bundlephobia/min/@next2d/player)    |
 
-
 Thanks to [KaliedaRik](https://github.com/KaliedaRik) for the (highly unscientific) comparison of the performance in different browsers (MacBook Pro 2019, 8k boxes):
 
-| Library | Chrome | Firefox | Safari |
-| --- | --- | --- | --- |
-| Pixi | 60 | 48 | 24 |
-| Scrawl-canvas | 56 | 60 | 40 |
-| P5 | 15 | 4 | 44 |
-| Mesh | 47 | 34 | 18 |
-| ZRender | 13 | 4 | 28 |
-| Two | 23 | 25 | 16 |
-| Konva | 23 | 7 | 19 |
-| CanvasKit | 17 | 19 | 22 |
-| Paper | 16 | 6 | 16 |
-| Easel | 11 | 4 | 28 |
-| Pencil | 12 | 3 | 19 |
-| Pts | 12 | 4 | 13 |
-| Fabric | 9 | 4 | 9 |
-| SVG | 10 | 7 | 10 |
-| Three | 8 | 7 | 4 |
-| DOM | 17 | 1 | 11 |
-| Raw JS | 19 | 19 | 39 |
+| Library       | Chrome | Firefox | Safari |
+| ------------- | ------ | ------- | ------ |
+| Pixi          | 60     | 48      | 24     |
+| Scrawl-canvas | 56     | 60      | 40     |
+| P5            | 15     | 4       | 44     |
+| Mesh          | 47     | 34      | 18     |
+| ZRender       | 13     | 4       | 28     |
+| Two           | 23     | 25      | 16     |
+| Konva         | 23     | 7       | 19     |
+| CanvasKit     | 17     | 19      | 22     |
+| Paper         | 16     | 6       | 16     |
+| Easel         | 11     | 4       | 28     |
+| Pencil        | 12     | 3       | 19     |
+| Pts           | 12     | 4       | 13     |
+| Fabric        | 9      | 4       | 9      |
+| SVG           | 10     | 7       | 10     |
+| Three         | 8      | 7       | 4      |
+| DOM           | 17     | 1       | 11     |
+| Raw JS        | 19     | 19      | 39     |
 
 Pure WebGL implementation outperforms them all with 60/120 fps on modern hardware (2023 laptop/tablet/mobile) for 1M boxes due to GPU offload of position computations.
 
 ## Quick Start
 
 ```
-$ yarn install
-$ yarn build
-$ yarn start
+$ pnpm install
+$ pnpm build
+$ pnpm start
 ```
 
 ## Misc

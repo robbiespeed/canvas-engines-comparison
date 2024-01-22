@@ -1,13 +1,13 @@
 import Engine from "./engine";
 
-class DomEngine extends Engine {
+const svgNS = "http://www.w3.org/2000/svg";
+
+class SVGEngine extends Engine {
   constructor() {
     super();
-    this.canvas = document.createElement("div");
-    this.canvas.className = "canvas";
-    this.canvas.style.width = this.width;
-    this.canvas.style.height = this.height;
-    this.canvas.style.position = "relative";
+    this.canvas = document.createElementNS(svgNS, "svg");
+    this.canvas.setAttribute("width", this.width);
+    this.canvas.setAttribute("height", this.height);
     this.content.appendChild(this.canvas);
   }
 
@@ -28,7 +28,7 @@ class DomEngine extends Engine {
 
   render() {
     // clear the canvas
-    this.canvas.innerHTML = "";
+    this.canvas.replaceChildren();
     this.cancelAnimationFrame(this.request);
 
     // rectangle creation
@@ -39,11 +39,11 @@ class DomEngine extends Engine {
       const size = 10 + Math.random() * 40;
       const speed = 1 + Math.random();
 
-      let rect = document.createElement("div");
-      rect.className = "rectangle";
-      rect.style.width = size + "px";
-      rect.style.height = size + "px";
-      rect.style.position = "absolute";
+      let rect = document.createElementNS(svgNS, "rect");
+      rect.setAttribute("width", size + "px");
+      rect.setAttribute("height", size + "px");
+      rect.setAttribute("fill", "#fff");
+      rect.setAttribute("stroke", "#000");
       rect.style.transform = `translate(${x}px, ${y}px)`;
       this.canvas.appendChild(rect);
       rects[i] = { x, y, size: size / 2, speed, el: rect };
@@ -55,6 +55,6 @@ class DomEngine extends Engine {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const engine = new DomEngine();
+  const engine = new SVGEngine();
   engine.render();
 });

@@ -11,17 +11,17 @@ class Engine {
     this.count;
 
     this.initFpsmeter();
+    // this.meter = { tick: () => {} };
     this.initSettings();
 
     this.initMenuLink();
 
-    const cancelAnimationFrameObj = (
+    const cancelAnimationFrameObj =
       window.cancelAnimationFrame ||
       window.webkitCancelRequestAnimationFrame ||
       window.mozCancelRequestAnimationFrame ||
       window.oCancelRequestAnimationFrame ||
-      window.msCancelRequestAnimationFrame
-    );
+      window.msCancelRequestAnimationFrame;
 
     this.cancelAnimationFrame = cancelAnimationFrameObj
       ? cancelAnimationFrameObj.bind(window) || clearTimeout
